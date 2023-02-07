@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<div class="circle"></div>
+   	 <div class="circle"></div>
+ 	   <div class="circle"></div>
+  	  <div class="circle"></div>
+  	  <div class="circle"></div>
+  	  <div class="circle"></div>
+  	  <div class="circle"></div>
+ 	   <div class="circle"></div>
+  	  <div class="circle"></div>
+   	 <div class="circle"></div>
+   	 <div class="circle"></div>
+ 	   <div class="circle"></div>
+ 	   <div class="circle"></div>
+ 	   <div class="circle"></div>
+ 	   <div class="circle"></div>
+   	 <div class="circle"></div>
+  	  <div class="circle"></div>
+   	 <div class="circle"></div>
+  	  <div class="circle"></div>
+  	  <div class="circle"></div>
+	
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Caculator</title>
+	
+
+	<script>
+		var bleep1 = new Audio();
+		bleep1.src = "bleep1.mp3";
+	</script>
+
+	<script>
+	var bleep2 = new Audio();
+	bleep2.src = "bleep2.mp3";
+	</script>
+	
+	<script>
+		var bleep3 = new Audio();
+		bleep3.src = "bleep3.mp3";
+		</script>
+
+</heal>
+
+
+<body>
+	<div class="container">
+	     <div class="calculator">
+		<input type="text" placeholder="0" id="output-screen">
+		<button onmousedown="bleep1.play()"	onclick="Clear()">C1</button>
+		<button onmousedown="bleep1.play()"	onclick="del()">DEL</button>
+		<button onmousedown="bleep2.play()"	onclick="display('%')">%</button>
+		<button onmousedown="bleep2.play()"	onclick="display('/')">/</button>
+		<button onmousedown="bleep1.play()"	onclick="display('7')">7</button>
+		<button onmousedown="bleep1.play()"	onclick="display('8')">8</button>
+		<button onmousedown="bleep1.play()"	onclick="display('9')">9</button>
+		<button onmousedown="bleep2.play()"	onclick="display('*')">*</button>
+		<button onmousedown="bleep1.play()"	onclick="display('4')">4</button>
+		<button onmousedown="bleep1.play()"	onclick="display('5')">5</button>
+		<button onmousedown="bleep1.play()"	onclick="display('6')">6</button>
+		<button onmousedown="bleep2.play()"	onclick="display('-')">-</button>
+		<button onmousedown="bleep1.play()"	onclick="display('1')">1</button>
+		<button onmousedown="bleep1.play()"	onclick="display('2')">2</button>
+		<button onmousedown="bleep1.play()"	onclick="display('3')">3</button>
+		<button onmousedown="bleep2.play()"	onclick="display('+')">+</button>
+		<button onmousedown="bleep2.play()"	onclick="display('.')">.</button>
+		<button onmousedown="bleep1.play()"	onclick="display('0')">0</button>
+		<button onmousedown="bleep3.play()"	onclick="Calculate()" class="equal">=</button>
+	</div>
+</div>
+
+	<script>
+		let outputScreen = document.getElementById("output-screen");
+
+		function display(num){
+			outputScreen.value += num;
+		}
+		function Calculate(){
+			try{
+				outputScreen.value = eval(outputScreen.value);
+			}
+			catch(err)
+			{
+				alert("Invalid")
+			}
+		}
+		function Clear(){
+			outputScreen.value = "";
+		}
+		function del(){
+			outputScreen.value = outputScreen.value.slice(0,-1);
+		}
+
+	</script>
+
+<script src="script.js"></script>
+</body>
+
+
+</html>
