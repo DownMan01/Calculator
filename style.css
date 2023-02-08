@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     outline: none;
+    cursor: url(/img/cursor.png), auto;
 }
 body{
     background: #e292be ;
@@ -57,7 +58,7 @@ footer p{
     text-align: center;
     margin-top: 15px;
     margin-bottom: 10px;
-    font-size: 0.95em;
+    font-size: 0.83em;
     opacity: 0.84;
 }
 footer .wave{
@@ -116,8 +117,6 @@ footer .wave#wave4{
     }
 }
 
-
-
 /* Calculator */
 
 .container{
@@ -129,11 +128,24 @@ footer .wave#wave4{
 .calculator{
     padding: 15px;
     border-radius: 30px;
+    position: relative;
+    animation: fly 10s infinite alternate;
+    transition: 0.2s;
     box-shadow: inset 5px 5px 12px #ffffff,
                       5px 5px 12px rgba(0, 0, 0, 1);
     display: grid;
     grid-template-columns: repeat(4, 68px);
-      background: url(./img/barbie.jpg);
+    background: url(./img/barbie.jpg);
+    background-position: center;
+}
+@keyframes fly {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(50px);
+	}
 }
 input{
     grid-column: span 4;
